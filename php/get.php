@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-    <form action="testform.php" method="post">
+    <form action=<?php echo $_SERVER["PHP_SELF"] ?> method="post">
     <h1>GET METHOD</h1>
     <div class="form-group ">
         <label >Name</label>
@@ -18,8 +18,24 @@
         <label >Email</label>
         <input type="email" class="form-control"   placeholder="Enter your Email" name="email">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" name="save">Submit</button>
 </form>
+</div>
+<div>
+<?php
+if(isset($_POST['save'])){
+    echo $_POST['name']."<br>";
+    echo $_POST['email'];
+}
+
+
+
+
+
+
+
+?>
+
 </div>
 </body>
 </html>
