@@ -12,7 +12,11 @@ session_start();
 <body>
     <h1>
     <?php
-    echo "Favorite Food : ". $_SESSION["favfood"];
+    if(isset($_SESSION["favfood"])){echo "Favorite Food : ". $_SESSION["favfood"];
+    }else{
+        echo "Session is not Found";
+    }
+    
     ?>
     <h1>
 </body>
